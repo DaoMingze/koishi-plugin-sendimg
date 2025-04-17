@@ -5,28 +5,25 @@ import path, { toNamespacedPath } from "path";
 import { sendLongImage } from './img_chunks';
 import { pathToFileURL } from 'url'
 
+export const name = "sendimg"
+export const usage = "发送图片"
 
-export const name = 'koishi-plugin-sendimg'
-namespace Sendimg {
-
-    export interface Config {
-        imageBasePath: string; // 图床路径
-        prefix: string; // 消息前缀
-        keywordJsonPath: string; // 关键词 JSON 文件路径
-    }
-
-    export const Config: Schema<Config> = Schema.object({
-        imageBasePath: Schema.string().description("图床路径").default("./data/images"),
-        prefix: Schema.string().description("消息前缀").default("#"),
-        keywordJsonPath: Schema.string()
-            .description("关键词 JSON 文件路径")
-            .default("./data/keywords.json"),
-    });
+export interface Config {
+    imageBasePath: string; // 图床路径
+    prefix: string; // 消息前缀
+    keywordJsonPath: string; // 关键词 JSON 文件路径
 }
 
-export default Sendimg
+export const Config: Schema<Config> = Schema.object({
+    imageBasePath: Schema.string().description("图床路径").default("./data/images"),
+    prefix: Schema.string().description("消息前缀").default("#"),
+    keywordJsonPath: Schema.string()
+        .description("关键词 JSON 文件路径")
+        .default("./data/keywords.json"),
+});
 
-export function apply(ctx: Context, config: Sendimg.Config) {
+
+export function apply(ctx: Context, config: Config) {
     // 读取关键词 JSON 文件（使用 Koishi 数据目录解析路径）
     const keywordJsonPath = path.resolve(ctx.baseDir, config.keywordJsonPath);
     let keywords: { [key: string]: string } = {};
