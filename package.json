@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-sendimg",
   "description": "user input keywords then bot send image from data.json",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,13 +9,16 @@
     "dist"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaoMingze/koishi-plugin-sendimg.git"
+  },
   "scripts": {},
   "keywords": [
-    "chatbot",
+    "image",
     "koishi",
     "plugin"
   ],
-  "devDependencies": {},
   "peerDependencies": {
     "koishi": "^4.18.7"
   }
