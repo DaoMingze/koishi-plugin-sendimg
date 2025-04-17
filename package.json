@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-sendimg",
   "description": "user input keywords then bot send image from data.json",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -23,6 +23,7 @@
     "koishi": "^4.18.7"
   },
   "dependencies": {
+    "axios": "^1.8.4",
     "canvas": "^3.1.0"
   }
 }
