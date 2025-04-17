@@ -1,0 +1,6 @@
+            const koishi_1 = require("koishi");
+            //await session.send(h.image(imageBuffer, 'image/jpeg'));
+            //await session.send(`您要的是：${imageFileName}\n` + h.image(imagePath))
+            // 读取图片并转换为 base64
+            //await session.send(h('image', { file: imagePath }));  session TypeError: Cannot read properties of undefined (reading 'startsWith')
+            //await session.send('图片：\n' + koishi_1.h.image(imagePath)); session Error: fetch d:\coding\koishi-app\data\wjl\details\A2W-detail.jpg failed
